@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/value_margin">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="W,1:2.2"
+        android:src="@drawable/beach_view"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/iv_image"
+        app:layout_constraintEnd_toEndOf="@id/iv_image"
+        app:layout_constraintTop_toBottomOf="@id/iv_image"
+        android:layout_marginTop="5dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/encodesanssemicondensed_bold"
+            android:text="Deluxe Twin"
+            android:textColor="@color/theme_black_color"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_view_rates"
+            app:layout_constraintTop_toTopOf="@id/tv_view_rates"
+            android:layout_marginEnd="@dimen/value_margin"/>
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Twin Single Beds, Cable TV, Free Wifi..."
+            android:textSize="@dimen/medium_text_size"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            android:fontFamily="@font/encodesanssemicondensed_regular"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"/>
+
+        <TextView
+            android:id="@+id/tv_view_rates"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="View Rates"
+            android:gravity="center"
+            android:textColor="@color/red"
+            android:textSize="@dimen/value_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/tv_description"
+            android:background="@drawable/rectangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_form"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Avg. Nightly/ Room From"
+        android:textSize="@dimen/value_text_size"
+        android:textStyle="bold"
+        android:fontFamily="@font/encodesanssemicondensed_bold"
+        app:layout_constraintTop_toBottomOf="@id/cl_group"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/value_margin"/>
+
+    <TextView
+        android:id="@+id/tv_sgd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="SGD"
+        android:textSize="@dimen/medium_text_size"
+        android:fontFamily="@font/encodesanssemicondensed_bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_price"
+        app:layout_constraintEnd_toStartOf="@id/tv_price"
+        android:layout_marginEnd="5dp"/>
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="161.42"
+        android:textSize="@dimen/text_size"
+        android:fontFamily="@font/encodesanssemicondensed_black"
+        app:layout_constraintTop_toTopOf="@id/tv_form"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_price"
+        android:background="#A1A1A1"
+        android:layout_marginTop="@dimen/value_margin"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/byrate_bg"
+    android:layout_marginTop="@dimen/value_margin"
+    android:paddingTop="@dimen/value_margin"
+>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="@dimen/value_margin"
+        android:layout_marginEnd="@dimen/value_margin"
+        >
+
+        <TextView
+            android:id="@+id/tv_rate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/encodesanssemicondensed_bold"
+            android:text="YOUR E-VOUCHER RATE"
+            android:paddingLeft="@dimen/margin_5dp"
+            android:textSize="@dimen/medium_text_size"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_next"
+            android:layout_marginEnd="@dimen/value_margin"/>
+
+        <TextView
+            android:id="@+id/tv_voucher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Mobile Ap Special Voucher"
+            android:textColor="@color/theme_black_color"
+            android:textStyle="bold"
+            android:paddingLeft="@dimen/margin_5dp"
+            android:textSize="@dimen/text_size"
+            android:fontFamily="@font/encodesanssemicondensed_black"
+            app:layout_constraintEnd_toEndOf="@id/tv_rate"
+            app:layout_constraintTop_toBottomOf="@id/tv_rate"
+            app:layout_constraintStart_toStartOf="@id/tv_rate"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iv_next"
+            android:layout_width="@dimen/back_image_with_height"
+            android:layout_height="@dimen/back_image_with_height"
+            android:src="@drawable/nextred"
+            android:gravity="center"
+            android:paddingRight="@dimen/margin_5dp"
+            android:textSize="@dimen/value_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_group2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cl_group"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="@dimen/margin_5dp"
+        android:paddingRight="@dimen/margin_5dp"
+        android:layout_marginStart="@dimen/value_margin"
+        android:layout_marginEnd="@dimen/value_margin"
+        >
+
+        <ImageView
+            android:id="@+id/iv_food"
+            android:layout_width="@dimen/to_do_image_width_height"
+            android:layout_height="@dimen/to_do_image_width_height"
+            android:src="@drawable/fnb"
+            app:layout_constraintEnd_toEndOf="@+id/tv_food"
+            app:layout_constraintStart_toStartOf="@id/tv_food"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="@dimen/byrate_item_margin_left"
+            android:fontFamily="@font/encodesanssemicondensed_regular"
+            android:text="Inclusive of \nBreakfast"
+            android:textAlignment="center"
+            android:textColor="@color/theme_black_color"
+            android:textSize="@dimen/medium_text_size"
+            app:layout_constraintTop_toBottomOf="@id/iv_food"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iv_discount"
+            android:layout_width="@dimen/to_do_image_width_height"
+            android:layout_height="@dimen/to_do_image_width_height"
+            android:src="@drawable/discount"
+            app:layout_constraintEnd_toEndOf="@+id/tv_discount"
+            app:layout_constraintStart_toStartOf="@id/tv_discount"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/encodesanssemicondensed_regular"
+            android:text="20% off \n In-room service"
+            android:textAlignment="center"
+            android:textColor="@color/theme_black_color"
+            android:textSize="@dimen/medium_text_size"
+            app:layout_constraintTop_toBottomOf="@id/iv_discount"
+            app:layout_constraintStart_toEndOf="@id/tv_food"
+            android:layout_marginStart="@dimen/byrate_item_margin_left_double"/>
+
+        <Button
+            android:id="@+id/btn_view_rates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Rates"
+            android:textColor="@color/red"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:textSize="@dimen/value_text_size"
+            android:background="@drawable/rectangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_discount"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_group2"
+        android:background="#A1A1A1"
+        android:paddingLeft="@dimen/margin_5dp"
+        android:paddingRight="@dimen/margin_5dp"
+        android:layout_marginTop="@dimen/value_margin"
+        android:layout_marginStart="@dimen/value_margin"
+        android:layout_marginEnd="@dimen/value_margin"
+        />
+
+    <TextView
+        android:id="@+id/tv_form"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Avg. Nightly/ Room From"
+        android:textSize="@dimen/value_text_size"
+        android:paddingLeft="@dimen/margin_5dp"
+        android:fontFamily="@font/encodesanssemicondensed_bold"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_sgd"
+        android:layout_marginTop="@dimen/value_margin"
+        android:layout_marginStart="@dimen/value_margin"
+        android:layout_marginEnd="@dimen/value_margin"/>
+
+    <TextView
+        android:id="@+id/tv_serviceCharge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Subject to GST &amp; Service Charge"
+        android:textSize="@dimen/medium_text_size"
+        android:paddingLeft="@dimen/margin_5dp"
+        android:fontFamily="@font/encodesanssemicondensed_regular"
+        app:layout_constraintTop_toBottomOf="@id/tv_form"
+        app:layout_constraintStart_toStartOf="@id/tv_form"
+        app:layout_constraintEnd_toEndOf="@id/tv_form"
+        />
+
+    <TextView
+        android:id="@+id/tv_sgd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="SGD"
+        android:textSize="@dimen/medium_text_size"
+        android:fontFamily="@font/encodesanssemicondensed_bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_price"
+        app:layout_constraintEnd_toStartOf="@id/tv_price"
+        android:layout_marginEnd="5dp"/>
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="161.42"
+        android:privateImeOptions="@dimen/margin_5dp"
+        android:textSize="@dimen/text_size"
+        android:fontFamily="@font/encodesanssemicondensed_black"
+        app:layout_constraintTop_toBottomOf="@id/tv_form"
+        app:layout_constraintBottom_toBottomOf="@id/tv_form"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/value_margin"/>
+
+    <Button
+        android:id="@+id/btn_member_details"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/back_image_with_height"
+        android:layout_marginTop="@dimen/value_margin"
+        android:background="#ffdf77"
+        android:fontFamily="@font/encodesanssemicondensed_bold"
+        android:text="Member Details"
+        android:textAllCaps="false"
+        android:textSize="@dimen/value_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_price" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

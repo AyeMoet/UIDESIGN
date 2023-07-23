@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/back_image_with_height"
+        android:layout_height="@dimen/back_image_with_height"
+        android:src="@drawable/left_arrow"
+        android:layout_marginTop="@dimen/image_margin_top"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/list_margin_start_end"/>
+
+    <ImageView
+        android:id="@+id/iv_chatActive"
+        android:layout_width="@dimen/back_image_with_height"
+        android:layout_height="@dimen/back_image_with_height"
+        android:src="@drawable/chatactive"
+        app:layout_constraintTop_toTopOf="@id/iv_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/list_margin_start_end"/>
+
+    <ImageView
+        android:id="@+id/iv_currency"
+        android:layout_width="@dimen/back_image_with_height"
+        android:layout_height="@dimen/back_image_with_height"
+        android:src="@drawable/currency"
+        app:layout_constraintTop_toTopOf="@id/iv_back"
+        app:layout_constraintEnd_toStartOf="@id/iv_chatActive"
+        android:layout_marginEnd="@dimen/list_margin_start_end"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/eventListPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="W,1:1.8"
+        android:clipToPadding="false"
+        android:layout_marginTop="@dimen/value_margin"
+        android:foregroundGravity="center"
+        android:overScrollMode="never"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/iv_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/iv_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:fastScrollEnabled="false"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/value_margin"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_toDoList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/eventListPager"
+        app:layout_constraintStart_toStartOf="@id/iv_back"
+        app:layout_constraintEnd_toEndOf="@id/iv_chatActive"
+        android:layout_marginTop="@dimen/value_margin"/>
+    
+    <LinearLayout
+        android:id="@+id/ll_group"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/group_height"
+        app:layout_constraintStart_toStartOf="@id/rv_toDoList"
+        app:layout_constraintEnd_toEndOf="@id/rv_toDoList"
+        app:layout_constraintTop_toBottomOf="@id/rv_toDoList"
+        android:layout_marginTop="@dimen/value_margin"
+        android:weightSum="2"
+        android:background="@drawable/g2"
+        >
+
+        <TextView
+            android:id="@+id/tv_byRoom"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/group_height"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="@dimen/value_text_size"
+            android:fontFamily="@font/encodesanssemicondensed_bold"
+            android:text="By Room"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/rv_toDoList" />
+
+        <TextView
+            android:id="@+id/tv_byRates"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/group_height"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:textSize="@dimen/value_text_size"
+            android:fontFamily="@font/encodesanssemicondensed_bold"
+            android:text="By Rates"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/rv_toDoList" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_room_rate"
+        android:layout_width="0dp"
+        android:nestedScrollingEnabled="true"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/ll_group"
+        app:layout_constraintEnd_toEndOf="@id/ll_group"
+        app:layout_constraintTop_toBottomOf="@id/ll_group"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/list_margin_start_end"
+        android:layout_marginTop="@dimen/value_margin"
+        tools:listitem="@layout/adapter_byroom_list"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
